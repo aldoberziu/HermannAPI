@@ -1,0 +1,69 @@
+doctype html 
+
+mixin updatePlaceholder(collection, updateEndpoint)
+  h2= `Update `+ updateEndpoint
+  p.text(for='title') Title
+  input.u#title(type='text' value=`${collection.title}` required, name='title')
+  p.text(for='description') Description
+  input.p#description(type='text' value=`${collection.description}` required, name='description')
+  br
+  //- img.form__user-photo(src=`/images/${notif.imageCover}`, alt='Doc image cover')
+  //- input.form__upload#images(type='file', accept='image/*', name='images')
+  //- label(for='photo') Choose New Photo 
+  br
+  //- button#btn= 'Upload Images (max=4)'
+  //- br
+  button.update#btn=`Update ${updateEndpoint}`
+  br
+
+html 
+    head
+        block head
+            title HG | #{title}
+            meta(charset='UTF-8')
+            meta(http-equiv='X-UA-Compatible' content='IE=edge')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            // Favicon
+            link(rel='icon' type='image/png' sizes='32x32' href='hermannGmeinerLogoTransparent.png')
+            // Remix icons
+            link(href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet')
+            // Font awesome
+            <base href="/">
+            link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer')
+            // admin styles
+            link(rel='stylesheet' href='admin.css')
+            // Website Description
+            meta(name='description' content='Shkolla e Mesme Profesionale per TIK "Hermann Gmeiner"')
+            // Website Keywords
+            meta(name='keywords' content='Hermann Gmeiner, Shkolla Profesionale')
+            // jQuery
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    body
+      form.update-form
+        +updatePlaceholder(notif, 'njoftime')
+        //- form.update-form
+        //-   -let doc;
+        //-   -if(updateEndpoint === 'njoftime') doc=notif;
+        //-   -if(updateEndpoint === 'aktivitete') doc=activity;
+        //-   h2 Update
+        //-   p.text Title
+        //-   input.u#title(type='text' value=`${doc.title}` placeholder='title', required, name='title')
+        //-   p.text Description
+        //-   input.p#description(type='text' value=`${doc.description}` placeholder='description', required, name='description')
+        //-   br
+        //-   //- img.form__user-photo(src=`/images/${notif.imageCover}`, alt='Doc image cover')
+        //-   //- input.form__upload#images(type='file', accept='image/*', name='images')
+        //-   //- label(for='photo') Choose New Photo 
+        //-   br
+        //-   //- button#btn= 'Upload Images (max=4)'
+        //-   //- br
+        //-   button.update#btn Update
+        //-   br
+
+        // Custom script
+        script(type='module' src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js')
+        script(src='adminLogin.js')
+

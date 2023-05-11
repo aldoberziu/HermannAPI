@@ -1,0 +1,49 @@
+doctype html 
+html 
+    head
+        block head
+            title HG | #{title}
+            meta(charset='UTF-8')
+            meta(http-equiv='X-UA-Compatible' content='IE=edge')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            link(rel='icon' type='image/png' sizes='32x32' href='hermannGmeinerLogoTransparent.png')
+            link(rel='stylesheet' href='teacherCard.css')
+            link(rel='stylesheet' href='root.css')
+    body
+      include _header
+
+      // Search
+      include _search
+
+      // CONTENT
+      -const collectionTitle = title.toLowerCase();
+      section.titleheading
+        h1#partnerheading Stafi Pedagogjik
+      each doc in docs
+        .containers
+          .container
+            .card
+              .imgBx
+                .circle
+                  -if(doc.image)
+                    img(src=`${doc.image}` style='width: 250px; height: 250px')
+                  -else
+                    img(src=`${doc.imageCover}` style='width: 250px; height: 250px')
+              .watermark
+                -if(doc.nickname)
+                  p= doc.nickname
+              .contentBx
+                -if(doc.name)
+                  h2= doc.name
+                -else
+                  h2= doc.title
+                .specs
+                  -if(doc.specialization)
+                    each specialization in doc.specialization
+                      h5= `${specialization}`
+                  -else
+                    h5=doc.description
+        
+
+      // Footer
+      include _footer

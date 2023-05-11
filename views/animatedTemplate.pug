@@ -1,0 +1,28 @@
+extends base
+
+mixin templateCard(image, title, organizer, wonBy, link)
+    .card
+      .imgBox
+        img(src=`${image}` alt='image')
+      .content
+        .details
+          h2= title
+            br
+            span= organizer
+          .data
+            each winner in wonBy
+              h3
+                span=`${winner}` 
+                  | 
+          .actionBtn
+            a(href=`${link}`) Lexo më shumë
+
+block content 
+    link(rel="stylesheet", href="animatedTemplate.css")
+    section#title-section.section
+        div
+            h1#title-heading Cmime
+    section#main-section.section
+        main
+            each doc in docs 
+                +templateCard(doc.imageCover, doc.title, doc.organizer, doc.wonBy, `/${collectionTitle}/${doc.slug}`)

@@ -1,0 +1,215 @@
+*{
+  scroll-behavior: smooth;
+}
+.titleheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  color: var(--red-color);
+  background-color: white;
+  font-size: 3vh;
+}
+#partnerheading {
+  position: relative;
+  color: var(--red-color);
+  text-decoration: none;
+}
+#partnerheading::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(1);
+  background-color: var(--red-color);
+  animation: openUnderline 2s ease;
+}
+@keyframes openUnderline {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+.dataProvime {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  /* margin-top: 6.25rem; */
+  font-size: 2vw;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.tabelaMeDatat {
+  width: 99.2vw;
+  height: 100%;
+  background-image: url('imgMatura.jpg');
+  background-size: cover;
+  padding: 2vw 0 3vw;
+}
+
+.dataCards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.coloredCard {
+  height: 15vw;
+  width: 25vw;
+  padding: 2vw 1vw 2vw;
+  margin: 2vw 1vw 2vw;
+  font-size: 1.7vw;
+  border-radius: 2vw;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.coloredCard h5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.matematike {
+  background-color: #89c4ffb9;
+}
+
+.gjuheShqipe {
+  background-color: #0080ffb9;
+}
+
+.gjuheHuaj {
+  background-color: #004589b9;
+}
+
+.meZgjedhje {
+  background-color: #001e3bb9;
+}
+
+.link {
+  position: absolute;
+  bottom: 1.5vw;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2.5vw;
+}
+
+.wrapper {
+  width: 100vw;
+  margin: 3vw 0 2vw;
+}
+
+.rregullaText {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: black;
+  font-size: 1.5vw;
+}
+
+.rregullaText h1 {
+  margin-bottom: 2vw;
+}
+
+.rregullaText iframe {
+  margin: 0;
+  padding: 0;
+  border: none;
+  overflow: scroll;
+  width: 70vw;
+  height: 30vw;
+  margin: auto;
+}
+
+#programiOrientues {
+  text-align: center;
+  color: black;
+  font-size: 1.4vw;
+  margin-top: 6vw;
+}
+
+.programeOrientueseContainer {
+  background-image: url('programeOrientueseBackg.jpeg');
+  width: 99.2vw;
+  height: 25vw;
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.programeOrientueseContainer i {
+  font-size: 2.5vw;
+}
+
+.squareCard {
+  width: 20vw;
+  height: 20vw;
+  border: 0.3vw solid whitesmoke;
+  border-radius: 5px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  text-align: center;
+}
+
+.circleCard {
+  width: 10vw;
+  height: 10vw;
+  border-radius: 1000px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: blue;
+  background-color: white;
+  margin-bottom: 2vw;
+}
+.circleCard i{
+  transition: 0.3s;
+}
+.circleCard:hover i{
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 770px) {
+  .dataCards {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  h5 {
+    font-size: 1.75vw;
+  }
+
+  .rregullaText iframe {
+    height: 40vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .dataCards {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .rregullaText iframe {
+    height: 50vw;
+  }
+}

@@ -1,0 +1,281 @@
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+
+:root{
+    --red-color: #580d11;
+}
+
+body{
+    /* color: black; */
+    width: 100%;
+}
+
+/* #region Title */
+
+#title-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--red-color);
+}
+
+#title-heading{
+    position: relative;
+    color: var(--red-color);
+    text-decoration: none;
+}
+  
+#title-heading::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--red-color);
+    transform: scaleX(1);
+    animation: openUnderline 2s ease;
+}
+
+@keyframes openUnderline {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
+}
+
+/* #endregion Title */
+
+/* #region MainSection */
+
+#info-afp-section{
+    padding-bottom: 0;
+}
+
+#info-afp-section main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+#info-afp-section main::before {  
+    content: "";
+    background-image: url('Circuit\ Board.svg');
+    background-size: cover;
+    position: absolute;
+    top: -7rem;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 0.5;
+    z-index: 0;
+}
+
+.info-part-afp-container{
+    background-color: white;
+    width: 90%;
+    display: flex;
+    height: 30vw;
+    margin-bottom: 4rem;
+    z-index: 5;
+}
+
+.headerAfp{
+    color: var(--red-color);
+}
+
+.image-container{
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#image-container1{
+    background-image: url("afp1.jpeg");
+}
+
+#image-container2{
+    background-image: url("afp2.jpeg");
+    background-position: 45% 25%;
+}
+
+#image-container3{
+    background-image: url("afp3.jpeg");
+}
+
+#image-container4{
+    background-image: url("afp1.jpeg");
+}
+
+.main-info-container{
+    flex: 2;
+    padding: 5rem;
+}
+
+#synimet-container{
+    height: 40vw;
+}
+
+#objektivat-container{
+    height: 45vw;
+}
+
+.image-container img{
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+/* #endregion MainSection */
+
+/* #region Responsitiviy */
+
+@media screen and (min-width: 1600px) {
+    .info-part-afp-container{
+        height: 20vw;
+    }
+
+    #synimet-container{
+        height: 22vw;
+    }
+    
+    #objektivat-container{
+        height: 25vw;
+    }    
+}
+
+@media screen and (min-width: 1400px) {
+    .info-part-afp-container{
+        height: 26vw;
+    }
+
+    #synimet-container{
+        height: 28vw;
+    }
+    
+    #objektivat-container{
+        height: 35vw;
+    }    
+}
+
+@media screen and (max-width: 1250px) {
+    #objektivat-container{
+        height: 55vw;
+    }
+
+    #synimet-container{
+        height: 50vw;
+    }
+
+    #funksionet-container{
+        height: 45vw;
+    }
+}
+
+@media screen and (max-width: 1150px) {
+    #objektivat-container{
+        height: 75vw;
+    }
+
+    #synimet-container{
+        height: 55vw;
+    }
+}
+
+@media screen and (max-width: 1080px) {
+    .info-part-afp-container{
+        display: flex;
+        flex-direction: column;
+        height: 70vw;
+    }
+
+    #info-afp-section{
+        height: 150%;
+    }
+
+    .main-info-container{
+        flex: 1;
+    }
+
+    .image-container{
+        flex: 1.5;
+    }
+
+    #synimet-container{
+        height: 80vw;
+    }
+
+    #funksionet-container{
+        height: 75vw;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .info-part-afp-container{
+        font-size: 1.25rem;    
+    }
+
+    #objektivat-container{
+        height: 90vw;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .info-part-afp-container{
+        height: 130vw;
+    }
+
+    #synimet-container{
+        height: 120vw;
+    }
+    
+    #objektivat-container{
+        height: 150vw;
+    }
+
+    #funksionet-container{
+        height: 150vw;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #synimet-container{
+        height: 200vw;
+    }
+    
+    #objektivat-container{
+        height: 230vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    #title-section{
+        margin-top: 9rem;
+    }
+
+    .info-part-afp-container{
+        height: 350vw;
+    }
+
+    #synimet-container{
+        height: 380vw;
+    }
+    
+    #objektivat-container{
+        height: 400vw;
+    }
+
+    #funksionet-container{
+        height: 380vw;
+    }
+}
+
+/* #endregion Responsitiviy */

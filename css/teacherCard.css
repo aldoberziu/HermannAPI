@@ -1,0 +1,186 @@
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  /* display: flex; */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+.titleheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  color: var(--red-color);
+  background-color: white;
+  font-size: 3vh;
+}
+#partnerheading {
+  position: relative;
+  color: var(--red-color);
+  text-decoration: none;
+}
+#partnerheading::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(1);
+  background-color: var(--red-color);
+  animation: openUnderline 2s ease;
+}
+@keyframes openUnderline {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+.containers {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 50px;
+}
+.container {
+  position: relative;
+}
+.container .card {
+  position: relative;
+  width: 280px;
+  height: 400px;
+  /* width: 210px;
+  height: 300px; */
+  background: #89040A;
+  border-radius: 20px;
+  /* border: 2px solid #111d4a; */
+  overflow: hidden;
+}
+.container .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s ease-in-out;
+}
+.container .card:hover{
+  transition: 0.4s ease-in-out;
+  box-shadow: 0px 4px 7px #111d4a;
+}
+.container .card .watermark {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -10%;
+  font-size: 8em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(17, 29, 74, 0.05);
+  /* transform: rotate(25deg); */
+  z-index: 0;
+}
+.container .card .imgBx {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  height: 250px;
+  transition: 0.5s;
+}
+.container .card:hover .imgBx {
+  top: 1%;
+  transform: translateX(-50%);
+}
+.container .card .circle {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 140%;
+  height: 150%;
+  border-radius: 50%;
+  background-color: #FFF8F0;
+  border: 5px solid #FFF8F0;
+  z-index: -5;
+}
+
+.container .card .imgBx img {
+  position: absolute;
+  bottom: -1%;
+  left: 50%;
+  transform: translate(-50%);
+  width: 230px;
+  border-radius: 42%;
+  overflow: hidden;
+  z-index: 20;
+}
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 1;
+}
+.container .card:hover .contentBx {
+  height: 150px;
+}
+/* arbionela toli */
+.container .card .contentBx h2 {
+  position: relative;
+  top: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #FFF8F0;
+  transition: 1s;
+  cursor: default;
+}
+.container .card:hover .contentBx h2 {
+  top: 10px;
+}
+/* ajo qe bohet hover */
+.container .card .contentBx .specs {
+  position: relative;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+.container .card:hover .contentBx .specs {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+  cursor: default;
+}
+/* programim dhe sy */
+.container .card .contentBx .specs {
+  position: relative;
+  padding: 15px 20px;
+  opacity: 0;
+  width: 100%;
+  height: 26px;
+  text-align: center;
+  line-height: 26px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  color: #FFF8F0;
+  visibility: hidden;
+  transition: 0.5s;
+}

@@ -1,0 +1,432 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hermann Gmeiner - Shkolla e Mesme Profesionale</title>
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="hermannGmeinerLogoTransparent.png"
+    />
+    <!-- Remix icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <!-- Font awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Swiper.js styles -->
+    <!-- <link rel="stylesheet" href="swiper-bundle.min.css" /> -->
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Root styles -->
+    <link rel="stylesheet" href="root.css" />
+    <!-- Website Description -->
+    <meta
+      name="description"
+      content='Shkolla e Mesme Profesionale per TIK "Hermann Gmeiner"'
+    />
+    <!-- Website Keywords -->
+    <meta name="keywords" content="Hermann Gmeiner, Shkolla Profesionale" />
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Slick -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+      integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar container"><a href="/home">
+            <h2 class="logo">Hermann Gmeiner</h2></a>
+          <div class="menu" id="menu">
+            <ul class="list">
+              <li class="list-item" id="about-header-link"><a class="list-link" href="/rreth-shkolles">RRETH SHKOLL&Euml;S</a>
+                <div id="triangleDropdown"></div>
+                <ul id="dropdownAbout">
+                  <li><a href="/mesuesit">Stafi pedagogjik</a></li>
+                  <li><a href="/fakte">Fakte dhe shifra</a></li>
+                  <li><a href="/afp">Nj&euml;sia e zhvillimit</a></li>
+                  <li><a href="/ambientet">Ambientet e shkoll&euml;s</a></li>
+                  <li><a href="/kontakt">Kontaktet</a></li>
+                </ul>
+              </li>
+              <li class="list-item" id="about-header-link"><a class="list-link" href="/inxhinieria">PROGRAMET</a>
+                <div id="triangleDropdown"></div>
+                <ul id="dropdownAbout">
+                  <li><a href="/inxhinieria">Inxhinieria Software</a></li>
+                  <li><a href="/orari-mesimor">Orari M&euml;simor</a></li>
+                </ul>
+              </li>
+              <li class="list-item"><a class="list-link" href="/matura">MATURA</a></li>
+              <li class="list-item"><a class="list-link" href="/punesime">K&Euml;NDI I PUN&Euml;SIMIT</a></li>
+              <li class="list-item"><a class="list-link" href="/partneret">PARTNER&Euml;T</a></li>
+              <li class="list-item" id="about-header-link"> <a class="link-list-link" href="/njoftime">T&Euml; REJAT E FUNDIT</a>
+                <div id="triangleDropdown"></div>
+                <ul id="dropdownAbout">
+                  <li><a href="/njoftime">Njoftime</a></li>
+                  <li><a href="/aktivitete">Aktivitete</a></li>
+                  <li><a href="/konkurse">Konkurse</a></li>
+                  <li><a href="/trajnime">Trajnime</a></li>
+                  <li><a href="/cmime">Cmime</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          <div class="list list-right">
+            <button class="btn place-items-center" id="search-icon"><i class="ri-search-line"></i></button>
+            <button class="btn place-items-center screen-lg-hidden menu-toggle-icon" id="menu-toggle-icon"><i class="ri-menu-3-line open-menu-icon"></i><i class="ri-close-line close-menu-icon"></i></button>
+          </div>
+        </nav>
+      </header>
+
+    <!-- Search -->
+    <div class="search-form-container container" id="search-form-container">
+      <div class="form-container-inner">
+        <form action="" class="form">
+          <input
+            class="form-input"
+            type="text"
+            placeholder="What are you looking for?"
+          />
+          <button class="btn form-btn" type="submit">
+            <i class="ri-search-line"></i>
+          </button>
+        </form>
+        <span class="form-note">Shtypni ESC për të dalë.</span>
+      </div>
+
+      <button class="btn form-close-btn place-items-center" id="form-close-btn">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+
+    <!-- Main banner -->
+    <section class="main-banner" id="banner">
+      <div id="banner-image"></div>
+
+      <div class="banner-title banner-title-anim" id="banner-title-1">
+        <h4>Mirëserdhët në</h4>
+        <h1>Shkollën e Mesme Profesionale për TIK "Hermann Gmeiner"</h1>
+        <a href="/rreth-shkolles" class="banner-title-link">
+          <p>Lexo më shumë</p>
+          <span class="fa fa-arrow-right"></span>
+        </a>
+
+        <div class="banner-indicatior-holder">
+          <i
+            class="banner-indicatior banner-indicatior-anim"
+            id="banner-indicator-1"
+            onclick="changeHomePhotoByClick(1)"
+          ></i>
+          <i
+            class="banner-indicatior banner-indicatior-passive"
+            id="banner-indicator-2"
+            onclick="changeHomePhotoByClick(2)"
+          ></i>
+          <i
+            class="banner-indicatior banner-indicatior-passive"
+            id="banner-indicator-3"
+            onclick="changeHomePhotoByClick(3)"
+          ></i>
+        </div>
+      </div>
+
+      <div class="banner-title" id="banner-title-2">
+        <h4>Zgjidhni AFP</h4>
+        <h1>Bëhuni pjesë e shkollës profesionale "Hermann Gmeiner"</h1>
+        <a href="/rreth-shkolles" class="banner-title-link">
+          <p>Lexo më shumë</p>
+          <span class="fa fa-arrow-right"></span>
+        </a>
+
+        <div class="banner-indicatior-holder">
+          <i
+            class="banner-indicatior banner-indicatior-passive"
+            id="banner-indicator-4"
+            onclick="changeHomePhotoByClick(1)"
+          ></i>
+          <i
+            class="banner-indicatior"
+            id="banner-indicator-5"
+            onclick="changeHomePhotoByClick(2)"
+          ></i>
+          <i
+            class="banner-indicatior banner-indicatior-passive"
+            id="banner-indicator-6"
+            onclick="changeHomePhotoByClick(3)"
+          ></i>
+        </div>
+      </div>
+
+      <div class="banner-title" id="banner-title-3">
+        <h4>Liderët e së ardhmes</h4>
+        <h1>Nga shkolla jonë diplomohen më të mirët</h1>
+        <a href="/rreth-shkolles" class="banner-title-link">
+          <p>Lexo më shumë</p>
+          <span class="fa fa-arrow-right"></span>
+        </a>
+
+        <div class="banner-indicatior-holder">
+          <i
+            class="banner-indicatior banner-indicatior-passive"
+            id="banner-indicator-7"
+            onclick="changeHomePhotoByClick(1)"
+          ></i>
+          <i
+            class="banner-indicatior banner-indicatior-passive"
+            id="banner-indicator-8"
+            onclick="changeHomePhotoByClick(2)"
+          ></i>
+          <i
+            class="banner-indicatior"
+            id="banner-indicator-9"
+            onclick="changeHomePhotoByClick(3)"
+          ></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who are we -->
+    <section class="section" id="who-are-we-section">
+      <main>
+        <div id="who-are-we">
+          <div id="who-we-are-logo">
+            <a href="/rreth-shkolles">
+              <img src="hermannGmeinerLogoTransparent.png" alt="logo" />
+            </a>
+          </div>
+          <div id="who-we-are-paragraph">
+            <h2>Kush jemi</h2>
+            <p>
+              Shkolla TIK “HERMANN GMEINER”, është një nga shkollat më të reja
+              profesionale në vend. Ajo mbështetet në modelin dhe profilin e
+              shkollës austriake, në përgatitjen e programuesve në informatikë,
+              prandaj profili i shkollimit është pretendues dhe i përshtatshëm
+              për nxënësit që kanë përfunduar me rezultate të mira dhe shumë të
+              mira shkollat 9 vjeçare.
+            </p>
+            <a href="/rreth-shkolles">
+              <p id="who-we-are-link">Vazhdo të lexosh</p>
+            </a>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Zbuloni me shume -->
+    <section class="section" id="learn-more-section">
+      <main>
+        <div id="learn-more-title">
+          <h1></h1>
+        </div>
+
+        <div id="learn-more-image-holder">
+          <a href="/matura">
+            <div
+              class="learn-more-image-article"
+              id="learn-more-image1"
+              onmouseover="sizeIconUp(1)"
+              onmouseout="sizeIconDown(1)"
+              name="1"
+            >
+              <div class="learn-more-info">
+                <i class="fa fa-trophy fa-2x learn-more-icon" id="icon1"></i>
+                <h3>Matura</h3>
+                <p>Matura është pjesë shumë e rëndësishme e shkollës tonë.</p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/mesuesit">
+            <div
+              class="learn-more-image-article"
+              id="learn-more-image2"
+              onmouseover="sizeIconUp(2)"
+              onmouseout="sizeIconDown(2)"
+              name="2"
+            >
+              <div class="learn-more-info">
+                <i
+                  class="fa fa-user-group fa-2x learn-more-icon"
+                  id="icon2"
+                ></i>
+                <h3>Stafi</h3>
+                <p>
+                  Stafi ynë është i përzgjedhur për të rritur nivelin e
+                  mësimdhënies.
+                </p>
+              </div>
+            </div>
+          </a>
+
+          <a href="/ambientet">
+            <div
+              class="learn-more-image-article"
+              id="learn-more-image3"
+              onmouseover="sizeIconUp(3)"
+              onmouseout="sizeIconDown(3)"
+              name="3"
+            >
+              <div class="learn-more-info">
+                <i class="fa fa-school fa-2x learn-more-icon" id="icon3"></i>
+                <h3>Ambientet</h3>
+                <p>
+                  Ambientet tona janë ndërtuar me qëllim akomodimin e nxënësve
+                  tanë.
+                </p>
+              </div>
+            </div>
+          </a>
+        </div>
+      </main>
+    </section>
+
+    <!-- Partners -->
+    <section class="section" id="partners-section">
+      <main>
+        <div id="partners-title">
+          <h1>Partnerët tanë</h1>
+
+          <a href="/partneret">
+            <h1>Shiko të gjithë <i class="fa fa-long-arrow-right"></i></h1>
+          </a>
+        </div>
+
+        <div class="customer-logos slider">
+          <div class="slide"><img src="adidas.png" alt="" /></div>
+          <div class="slide"><img src="facebook.png" alt="" /></div>
+          <div class="slide"><img src="google.png" alt="" /></div>
+          <div class="slide"><img src="instagram.png" alt="" /></div>
+          <div class="slide"><img src="nike.png" alt="" /></div>
+          <div class="slide"><img src="twitter.png" alt="" /></div>
+          <div class="slide"><img src="uber.png" alt="" /></div>
+          <div class="slide"><img src="youtube.png" alt="" /></div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact-section">
+      <main>
+        <div id="contact-info-image">
+          <div id="contact-info-holder">
+            <h1>Na kontaktoni</h1>
+            <p>Mos hezitoni të na kontaktoni!</p>
+            <a href="/kontakt">
+              <p id="contact-info-link">Kontakte</p>
+            </a>
+          </div>
+        </div>
+      </main>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer section">
+      <div class="footer-container container d-grid">
+        <div class="company-data">
+          <a href="/home">
+            <h2 id="logo_footer">Hermann Gmeiner</h2>
+          </a>
+          <p class="company-description">
+            Shkolla e Mesme Profesionale për TIK "Hermann Gmeiner".
+          </p>
+          <p>Adresa: Rruga Hermann Gmeiner, pranë Fshatit SOS, Tiranë</p>
+
+          <ul class="list social-media">
+            <li class="list-item">
+              <a
+                href="https://www.instagram.com/shkolla_hermann_gmeiner?igshid=YmMyMTA2M2Y="
+                class="list-link"
+                ><i class="ri-instagram-line"></i
+              ></a>
+            </li>
+            <li class="list-item">
+              <a
+                href="https://www.facebook.com/hermanngmeinerTIK/"
+                class="list-link"
+                ><i class="ri-facebook-circle-line"></i
+              ></a>
+            </li>
+          </ul>
+
+          <span class="copyright-notice" id="copyright-notice"
+            >&copy;2022 HG. Çdo e drejtë e rezervuar.</span
+          >
+        </div>
+
+        <div>
+          <h6 class="title footer-title">Kategori</h6>
+
+          <ul class="footer-list list">
+            <li class="list-item">
+              <a href="/rreth-shkolles" class="list-link">Rreth nesh</a>
+            </li>
+            <li class="list-item">
+              <a href="/matura" class="list-link">Matura</a>
+            </li>
+            <li class="list-item">
+              <a href="/partneret" class="list-link">Partnerët</a>
+            </li>
+            <li class="list-item">
+              <a href="/njoftime" class="list-link">Të rejat e fundit</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h6 class="title footer-title">Shkolla</h6>
+
+          <ul class="footer-list list">
+            <li class="list-item">
+              <a href="/kurrikula" class="list-link">Kurrikula</a>
+            </li>
+            <li class="list-item">
+              <a href="/mesuesit" class="list-link">Stafi pedagogjik</a>
+            </li>
+            <li class="list-item">
+              <a href="/ambientet" class="list-link">Ambientet</a>
+            </li>
+            <li class="list-item">
+              <a href="/kontakt" class="list-link">Kontaktoni</a>
+            </li>
+            <!-- <li class="list-item">
+                        <a href="#" class="list-link">F.A.Q</a>
+                    </li> -->
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <div class="loading-container">
+      <div class="loading"></div>
+      <div id="loading-text">LOADING...</div>
+    </div>
+
+    <script>
+      $(window).on('load', function () {
+        $('.loading-container').fadeOut('slow');
+      });
+    </script>
+    <!-- Swiper.js -->
+    <script type="application/javascript" src="swiper-bundle.min.js"></script>
+    <!-- Custom script -->
+    <script type="application/javascript" src="main.js"></script>
+    <script type="application/javascript" src="custom.js"></script>
+    <script type="application/javascript" src="partners-scroll.js"></script>
+  </body>
+</html>

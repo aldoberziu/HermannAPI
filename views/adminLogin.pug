@@ -1,0 +1,45 @@
+doctype html 
+html 
+    head
+        block head
+            title HG | #{title}
+            meta(charset='UTF-8')
+            meta(http-equiv='X-UA-Compatible' content='IE=edge')
+            meta(name='viewport' content='width=device-width, initial-scale=1.0')
+            // Favicon
+            link(rel='icon' type='image/png' sizes='32x32' href='hermannGmeinerLogoTransparent.png')
+            // Remix icons
+            link(href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet')
+            // Font awesome
+            <base href="/">
+            link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer')
+            // admin styles
+            link(rel='stylesheet' href='admin.css')
+            // Website Description
+            meta(name='description' content='Shkolla e Mesme Profesionale per TIK "Hermann Gmeiner"')
+            // Website Keywords
+            meta(name='keywords' content='Hermann Gmeiner, Shkolla Profesionale')
+            // jQuery
+            script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+    body
+        form.login
+          h2 Login
+          p.text(for='email') E-Mail
+          input.u#email(type='email' placeholder='E-Mail...', required)
+          p.text(for='password') Password
+          input.p#password(type='password' placeholder='Password...', required, minLength='8')
+          br
+          p.text(for='passwordSecret') Secret Password
+          input.p#passwordSecret(type='password' placeholder='••••••••', required, minLength='8')
+          br
+          button#btn Login
+          br
+
+        // Custom script
+        script(type='module' src='https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.2/axios.min.js')
+        script(src='adminLogin.js')
+        script(src='admin.js')
+

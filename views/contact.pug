@@ -1,0 +1,43 @@
+extends base
+
+block content
+    link(rel='stylesheet' href='contact.css')
+    section#title-section.section
+        main
+            h1#title-heading Na kontaktoni
+    section#contacts-section.section
+        main
+            #contacts-info-holder
+                h1 Kontakte:
+                #contacts-grid
+                    .contacts-item
+                        i.fa-solid.fa-location-dot
+                        .contact-link
+                            p &nbsp;Tiran&euml;, Fshati SOS
+                    .contacts-item
+                        i.fa.fa-globe-europe(aria-hidden='true')
+                        .contact-link
+                            a(href='#')
+                                p Website yn&euml;
+                        // www.hermanngmeiner.edu.al
+                    .contacts-item
+                        i.fa-regular.fa-envelope
+                        .contact-link
+                            a(href='https://mail.google.com/mail/?view=cm&fs=1&to=shkollah.g@gmail.com') shkollah.g@gmail.com
+                    .contacts-item
+                        i.fa-brands.fa-instagram
+                        .contact-link
+                            a(href='https://www.instagram.com/shkolla_hermann_gmeiner?igshid=YmMyMTA2M2Y=')
+                                p &nbsp;Instagram
+                    .contacts-item
+                        i.fa-brands.fa-facebook
+                        .contact-link
+                            a(href='https://www.facebook.com/hermanngmeinerTIK/')
+                                p Facebook
+                    .contacts-item
+                        i.fa.fa-phone(aria-hidden='true')
+                        .contact-link
+                            p +355 68 765 4321
+            #location-holder
+                h1 Vendndodhja:
+                iframe(src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2997.1027451036634!2d19.8348771!3d41.3066284!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x135030dcc56cd34b%3A0x9bc3182a8914bece!2sShkolla%20%22Hermann%20Gmeiner%22!5e0!3m2!1sen!2s!4v1664961211251!5m2!1sen!2s' width='600' height='450' style='border:0;' allowfullscreen='' loading='lazy' referrerpolicy='no-referrer-when-downgrade')

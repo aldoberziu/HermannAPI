@@ -1,0 +1,68 @@
+extends base
+
+block content 
+    link(rel="stylesheet", href="ambientet.css")
+    //- link(rel="stylesheet", href="swiper-bundle.min.css")
+    link(rel='icon' type='image/png' sizes='32x32' href='../mainElements/favicon.png')
+    // Remix icons
+    link(href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet')
+    // Font awesome
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    // Website Description
+    meta(name='description' content='Shkolla e Mesme Profesionale per TIK "Hermann Gmeiner"')
+    // Website Keywords
+    meta(name='keywords' content='Hermann Gmeiner, Shkolla Profesionale')
+    // Swiper JS
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    link(rel='stylesheet' href='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css')
+    section#title-section.section
+        div
+            h1#title-heading Ambientet
+    section#ambientet-section.section
+        main
+            .swiper.mySwiper
+                .swiper-wrapper
+                    #slide1.swiper-slide.swiper-zoom-container
+                    #slide2.swiper-slide
+                    #slide3.swiper-slide
+                    #slide4.swiper-slide
+                    #slide5.swiper-slide
+                    #slide6.swiper-slide
+                    #slide7.swiper-slide
+                    #slide8.swiper-slide
+                    #slide9.swiper-slide
+                    #slide10.swiper-slide
+                    #slide11.swiper-slide
+                    #slide12.swiper-slide
+                    #slide13.swiper-slide
+                    #slide14.swiper-slide
+                    #slide15.swiper-slide
+                    #slide16.swiper-slide
+                    #slide17.swiper-slide
+                    #slide18.swiper-slide
+                    #slide19.swiper-slide
+                    #slide20.swiper-slide
+                .swiper-button-next
+                .swiper-button-prev
+                .swiper-pagination
+    section#info-ambientet-section.section
+        #info-ambientet-container
+            #info-ambientet
+                h1 Investimet n&euml; shkoll&euml;
+                p
+                    | Shkolla disponon mjete dhe laboratore me kushte inovative duke p&euml;rmir&euml;suar k&euml;shtu nivelin e m&euml;simnx&euml;nies dhe m&euml;simdh&euml;nies nga ku mund t&euml; p&euml;rmenden:
+                    ul#ambientet-list
+                        li
+                            | Laborator IT;
+                        li
+                            | Laborator Rrjetash;
+                        li
+                            | Laborator Programimi;
+                        li
+                            | Laborator Databaze;
+                        li
+                            | Bibliotek&euml;.
+    script(src='https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js')
+    script(src='swiper-script.js') 
+    script(src='main.js') 
+

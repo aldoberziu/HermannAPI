@@ -1,0 +1,163 @@
+doctype html
+
+mixin placeholder2(title, link, date, endpoint, id)
+  .trending-news-box-holder
+    .trending-news-data
+      button#btnoverlay.buttonoverlay(onclick='')
+        a.title.article-title= title
+      #overlay
+        .overlay-form
+          input.form-title(type='text' placeholder='Title')
+          #closebtn.close +
+          label(for=`file-ip-1`) Upload Image
+          input#file-ip-1(type='file' accept='image/*' onchange='showPreview(event);' multiple='')
+          .preview
+            img#file-ip-1-preview
+          form(action='')
+            textarea#main-content(name=`article-data-1` cols='30' rows='10')
+      .article-data
+        span= date
+        a(class='button delete-doc' href=`/admin-dashboard/${endpoint}/`+ id)
+          i.ri-delete-bin-line
+mixin overlay()
+  #overlay
+    form.overlay-form
+      .form__group
+          label.form__label(for='title') Titulli
+          input#title.form__input(type='text', value=`${updatingNotif.title}`, required, title='title')
+      .form__group.ma-bt-md
+          label.form__label(for='description') description
+          input#description.form__input(type='description', value=`${updatingNotif.description}`, required, name='description')
+      .form__group.form__photo-upload
+          img.form__user-photo(src=`/img/users/${updatingNotif.image}`, alt='User photo')
+          input.form__upload(type='file', accept='image/*', id='photo', name='photo')
+          label(for='photo') Choose New Photo                        
+      .form__group.right
+          button.btn.btn--small.btn--green Save settings
+mixin placeholder(title, date, endpoint, link, id)
+  .trending-news-box-holder
+    .trending-news-data
+      a.title.article-title(href= link)= title
+      .article-data
+        span= date
+        a(class='button delete-doc' href=`/admin-dashboard/delete/${endpoint}/`+ id)
+          i.ri-delete-bin-line
+        //- a(class='button' href=`/admin-dashboard/update/${endpoint}/`+ id)
+        //-   i.ri-pencil-line
+
+head
+  block head
+    title HG | #{title}
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='icon' type='image/png' sizes='32x32' href='hermannGmeinerLogoTransparent.png')
+    link(href='https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css' rel='stylesheet')
+    <base href="/">
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css' integrity='sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    link(rel='stylesheet' href='adminDashboard.css')
+    link(href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet')
+    meta(name='description' content='Shkolla e Mesme Profesionale per TIK "Hermann Gmeiner"')
+    meta(name='keywords' content='Hermann Gmeiner, Shkolla Profesionale')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js' integrity='sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==' crossorigin='anonymous' referrerpolicy='no-referrer')
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+h1 ADMIN DASHBOARD
+//- form.logout
+//-  button#btn Logout
+.tabs
+  .sidebarlinks
+    button.sidebarbtn(data-for-tab='1') Njoftime
+    button.sidebarbtn(data-for-tab='2') Aktivitete
+    button.sidebarbtn(data-for-tab='3') M&euml;suesit
+    button.sidebarbtn(data-for-tab='4') Trajnime
+    button.sidebarbtn(data-for-tab='5') Cmime
+    button.sidebarbtn(data-for-tab='6') Konkurse
+  .line
+  .tabcontent(data-tab='1')
+    .search
+        h1 Njoftime
+        form(action='GET')
+            input.searchTerm(type='text' placeholder='What are you looking for?')
+            button.searchButton(type='submit')
+                i.fa.fa-search
+    .sidebar.d-grid
+        -if(typeof notifsOnAdmin != "undefined" && notifsOnAdmin != null && notifsOnAdmin.length != null && notifsOnAdmin.length > 0)
+          each notif, i in notifsOnAdmin
+            - const date = notif.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+            +placeholder(notif.title, date, 'njoftime', `/admin-dashboard/update/njoftime/`+ notif.id , notif.id)
+        -else
+          h3 Nuk u gjet asnje njoftim.
+  .tabcontent(data-tab='2')
+    .search
+      h1 Aktivitete
+      form(action='GET')
+          input.searchTerm(type='text' placeholder='What are you looking for?')
+          button.searchButton(type='submit')
+              i.fa.fa-search
+    .sidebar.d-grid
+      -if(typeof activitiesOnAdmin != "undefined" && activitiesOnAdmin != null && activitiesOnAdmin.length != null && activitiesOnAdmin.length > 0)
+          each activity in activitiesOnAdmin 
+              - const date = activity.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+              +placeholder(activity.title, date, 'aktivitete', `/admin-dashboard/update/aktivitete/`+ activity.id , activity.id)
+      -else
+          h3 Nuk u gjet asnje aktivitet.
+  .tabcontent(data-tab='3')
+    .search
+      h1 Mesuesit
+      form(action='GET')
+          input.searchTerm(type='text' placeholder='What are you looking for?')
+          button.searchButton(type='submit')
+              i.fa.fa-search
+    .sidebar.d-grid
+        -if(typeof teachersOnAdmin != "undefined" && teachersOnAdmin != null && teachersOnAdmin.length != null && teachersOnAdmin.length > 0)
+            each teacher in teachersOnAdmin 
+                +placeholder(teacher.name, 'mesuesit', '', 'mesuesit', teacher.id)
+        -else
+            h3 Nuk u gjet asnje mesues.
+  .tabcontent(data-tab='4')
+    .search
+        h1 Trajnime
+        form(action='GET')
+            input.searchTerm(type='text' placeholder='What are you looking for?')
+            button.searchButton(type='submit')
+                i.fa.fa-search
+    .sidebar.d-grid
+        -if(typeof coachingsOnAdmin != "undefined" && coachingsOnAdmin != null && coachingsOnAdmin.length != null && coachingsOnAdmin.length > 0)
+            each coaching in coachingsOnAdmin 
+                - const date = coaching.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+                +placeholder(coaching.title, date, 'trajnime', `/admin-dashboard/update/trajnime/`+ coaching.id , coaching.id)
+        -else
+            h3 Nuk u gjet asnje trajnim.
+  .tabcontent(data-tab='5')
+    .search
+        h1 Cmime
+        form(action='GET')
+            input.searchTerm(type='text' placeholder='What are you looking for?')
+            button.searchButton(type='submit')
+                i.fa.fa-search
+    .sidebar.d-grid
+        -if(typeof awardsOnAdmin != "undefined" && awardsOnAdmin != null && awardsOnAdmin.length != null && awardsOnAdmin.length > 0)
+            each award in awardsOnAdmin 
+                - const date = award.year.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+                +placeholder(award.title, date, 'cmime', `/admin-dashboard/update/cmime/`+ award.id , award.id)
+        -else
+            h3 Nuk u gjet asnje cmim.
+  .tabcontent(data-tab='6')
+    .search
+        h1 Konkurse
+        form(action='GET')
+            input.searchTerm(type='text' placeholder='What are you looking for?')
+            button.searchButton(type='submit')
+                i.fa.fa-search
+    .sidebar.d-grid
+        -if(typeof competitionsOnAdmin != "undefined" && competitionsOnAdmin != null && competitionsOnAdmin.length != null && competitionsOnAdmin.length > 0)
+            each competition in competitionsOnAdmin 
+                - const date = competition.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+                +placeholder(competition.title, date, 'konkurse', `/admin-dashboard/update/konkurse/`+ competition.id , competition.id)
+        -else
+            h3 Nuk u gjet asnje konkurs.
+  script(src='/admin.js')
+  script(src='/adminLogin.js')

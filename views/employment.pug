@@ -1,0 +1,23 @@
+extends base
+
+block content 
+    link(rel="stylesheet", href="employment.css")
+    section.titleheading
+        h1#partnerheading K&euml;ndi i pun&euml;simit
+    section.mainKendi
+        .puneContainer
+            -if(docs.length === 0)
+                h2 Nuk u gjet asnj&euml; njoftim pun&euml;simi!
+            each doc in docs
+                .puneCard
+                    .puneImg
+                        img(src=`${doc.imageCover}` alt='')
+                    .puneText
+                        h1= doc.title
+                        -if(doc.experience)
+                            |                    = Me Eksperienc&euml;
+                    .dateAndButton
+                        div(style='display: flex;')
+                            p= doc.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+                        a(href=`https://mail.google.com/mail/?view=cm&fs=1&to=${doc.email}&su=Aplikim+per+pune+${doc.title}&`)
+                            button Apliko

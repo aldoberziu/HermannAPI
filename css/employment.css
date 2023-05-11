@@ -1,0 +1,133 @@
+.titleheading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    color: var(--red-color);
+    background-color: white;
+    font-size: 3vh;
+  }
+  #partnerheading {
+    position: relative;
+    color: var(--red-color);
+    text-decoration: none;
+  }
+  #partnerheading::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    transform: scaleX(1);
+    background-color: var(--red-color);
+    animation: openUnderline 2s ease;
+  }
+  @keyframes openUnderline {
+    from {
+      transform: scaleX(0);
+    }
+  
+    to {
+      transform: scaleX(1);
+    }
+  }
+.mainKendi {
+    margin: 5rem 0 5vw;
+    text-align: center;
+    color: black;
+}
+
+.mainKendi h1 {
+    font-size: 2.75vw;
+}
+
+.puneContainer {
+    margin: auto;
+    width: 81vw;
+    margin-top: 2rem;
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: repeat();
+    row-gap: 3vw;
+}
+
+.puneCard {
+    width: 25vw;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 0.2vw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    padding: 1vw 1vw 1vw;
+}
+
+.puneImg img {
+    border-radius: 0.3vw 0.3vw 0 0;
+}
+
+.puneText {
+    border-bottom: thin rgba(153, 153, 153, 0.2) solid;
+    font-size: 1vw;
+}
+
+.puneText h1 {
+    font-size: 1.75vw;
+}
+
+.dateAndButton {
+    font-size: 1vw;
+    margin-top: 1vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dateAndButton button {
+    cursor: pointer;
+    background-color: var(--lighter-red-color);
+    padding: 0.5vw 0.75vw;
+    border-radius: 2vw;
+    color: white;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .mainKendi h1 {
+        font-size: 3.75vw;
+    }
+
+    .puneContainer {
+        grid-template-columns: auto auto;
+        grid-template-rows: repeat();
+        justify-content: center;
+        column-gap: 3vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .puneContainer {
+        grid-template-columns: auto;
+        grid-template-rows: repeat();
+        justify-content: center;
+    }
+
+    .puneCard {
+        width: 60vw;
+    }
+
+    .puneText {
+        font-size: 2.5vw;
+    }
+
+    .puneText h1 {
+        font-size: 3.25vw;
+    }
+
+    .dateAndButton {
+        font-size: 2.5vw;
+    }
+}

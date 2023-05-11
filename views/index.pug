@@ -1,0 +1,32 @@
+extends base
+
+block content 
+    link(rel="stylesheet", href="index.css")
+    link(rel='stylesheet' type="text/html" href='swiper-bundle.min.css')
+
+    // Main banner
+    include _bannerWelcome
+    // Who are we
+    include _whoweare
+
+    // Zbuloni me shume
+    include _zbulomeshume
+
+    // Partners
+    include _partners
+
+    // Contact
+    include _contact
+
+    // Custom script
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js") 
+    script(src="main.js") 
+    script(src="swiper-bundle.min.js")  
+    script(src="custom.js")  
+    script(src="partners-scroll.js")  
+    script.
+            $(document).ready(function () {
+                let currentYear = new Date().getFullYear();
+                $(".maturaHeading").text("Datat e Provimeve të Maturës Shtetërore " + currentYear);
+            });
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js' integrity='sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==' crossorigin='anonymous' referrerpolicy='no-referrer')

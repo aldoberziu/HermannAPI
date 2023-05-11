@@ -1,0 +1,77 @@
+header#header.header
+  nav.navbar.container
+    a(href='/home')
+      h2.logo Hermann Gmeiner
+    #menu.menu
+      ul.list
+        li#about-header-link.list-item
+          -if(endpoint == "/rreth-shkolles" || endpoint == "/mesuesit" || endpoint == "/fakte" || endpoint == "/afp" || endpoint == "/ambientet/" || endpoint == "/kontakt")
+            a.current.list-link(href='/rreth-shkolles') RRETH SHKOLL&Euml;S
+          -else
+            a.list-link(href='/rreth-shkolles') RRETH SHKOLL&Euml;S
+          #triangleDropdown
+          ul#dropdownAbout
+            li
+              a(href='/mesuesit') Stafi pedagogjik
+            li
+              a(href='/fakte') Fakte dhe shifra
+            li
+              a(href='/afp') Nj&euml;sia e zhvillimit
+            li
+              a(href='/ambientet') Ambientet e shkoll&euml;s
+            li
+              a(href='/kontakt') Kontaktet
+        li#about-header-link.list-item
+          -if(endpoint == "/inxhinieria/" || endpoint == "/kurrikula")
+            a.current.list-link(href='/inxhinieria/') PROGRAMET
+          -else
+            a.list-link(href='/inxhinieria') PROGRAMET
+          #triangleDropdown
+          ul#dropdownAbout
+            li
+              a(href='/inxhinieria') Inxhinieria Software
+            li
+              a(href='/kurrikula') Kurrikula
+            li
+              a(href='/ligje-urdhera-udhezime') Ligje, urdh&euml;ra, udh&euml;zime
+
+        li.list-item
+          -if(endpoint == "/matura/")
+            a.current.list-link(href='/matura/') MATURA
+          -else
+            a.list-link(href='/matura/') MATURA
+        li.list-item
+          -if(endpoint == "/punesime")
+            a.current.list-link(href='/punesime') K&Euml;NDI I PUN&Euml;SIMIT
+          -else
+            a.list-link(href='/punesime/') K&Euml;NDI I PUN&Euml;SIMIT
+        li.list-item
+          -if(endpoint == "/partneret")
+            a.current.list-link(href='/partneret') PARTNER&Euml;T
+          -else
+            a.list-link(href='/partneret') PARTNER&Euml;T
+        li#about-header-link.list-item 
+          -if(endpoint == "/njoftime" || endpoint == "/aktivitete" || endpoint == "/konkurse" || endpoint == "/trajnime" || endpoint == "/cmime")
+            a.current.link-list-link(href='/njoftime') T&Euml; REJAT E FUNDIT
+          -else
+            a.link-list-link(href='/njoftime') T&Euml; REJAT E FUNDIT
+          #triangleDropdown
+          ul#dropdownAbout
+            li
+              a(href='/njoftime') Njoftime
+            li
+              a(href='/aktivitete') Aktivitete
+            li
+              a(href='/konkurse') Konkurse
+            li
+              a(href='/trajnime') Trajnime
+            li
+              a(href='/cmime') Cmime
+
+        
+    .list.list-right
+      button#search-icon.btn.place-items-center
+        i.ri-search-line
+      button#menu-toggle-icon.btn.place-items-center.screen-lg-hidden.menu-toggle-icon
+        i.ri-menu-3-line.open-menu-icon
+        i.ri-close-line.close-menu-icon

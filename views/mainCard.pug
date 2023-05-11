@@ -1,0 +1,26 @@
+extends base
+
+mixin placeholder(image, title, description, link)
+    .partnerCard.card--9
+        img.card__img(src= image alt=`${title}`)
+        h2.card__title= title
+        p.card__text= description
+        a.card__btn(href=`${link}`) Shiko m&euml; shum&euml; &#x21AA;
+
+block content
+    link(rel='stylesheet' href='mainCard.css')
+    section.titleheading
+        main
+            -if(collectionTitle === 'trajnime')
+                h1#partnerheading Trajnime
+            -if(collectionTitle === 'partneret')
+                h1#partnerheading Partnerët
+            -if(collectionTitle === 'konkurse')
+                h1#partnerheading Konkurse
+    section#main-section.main
+        .content
+            each doc in docs
+                -if(collectionTitle === 'partneret')
+                    +placeholder(`${doc.imageCover}`, doc.title, doc.description, doc.link)
+                -if(collectionTitle === 'trajnime' || collectionTitle === 'konkurse')
+                    +placeholder(`${doc.imageCover}`, doc.title, doc.description, `${collectionTitle}/${doc.slug}`)

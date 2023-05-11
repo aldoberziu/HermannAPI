@@ -1,0 +1,49 @@
+extends base
+
+//- E LAM KTU
+mixin article(link, image, date, day, title)
+  a.article.featured-article.featured-article-1(href=`${link}`)
+    img.article-image(src=`${image}` alt='')
+    .article-data-container
+      .article-data
+        span= date
+        span.article-data-spacer
+        span= day
+      h3.title.article-title= title
+mixin newArticles(link, image, date, day, title)
+  a.trending-news-box(href=link)
+    .trending-news-img-box
+      img.article-image(src=image alt='')
+    .trending-news-data
+      .article-data
+        span= date
+        span.article-data-spacer
+        span= day
+      h3.title.article-title= title
+mixin slide(image, date, title)
+  a.article.swiper-slide(href='#')
+    img.article-image(src=image alt='')
+    .article-data-container
+      .article-data
+        span= date
+        span.article-data-spacer
+        span 3 Min read
+      h3.title.article-title= title 
+
+block content
+  // Featured Articles
+  section.featured-articles.section.section-header-offset
+    .featured-articles-container.container.d-grid
+      .featured-content.d-grid
+        each activity in activities
+          +article(`/aktivitete/${activity.slug}`, activity.imageCover, activity.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'}), activity.createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), activity.title)
+      .sidebar.d-grid
+        h3.title.featured-content-title Aktivite t&euml; reja 
+        +newArticles(`/aktivitete/${newActivities[0].slug}`, newActivities[0].imageCover, newActivities[0].createdAt.toLocaleString('en-GB', {year: 'numeric', month: 'numeric', day: 'numeric'}), newActivities[0].createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), newActivities[0].title)
+        +newArticles(`/aktivitete/${newActivities[1].slug}`, newActivities[1].imageCover, newActivities[1].createdAt.toLocaleString('en-GB', {year: 'numeric', month: 'numeric', day: 'numeric'}), newActivities[1].createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), newActivities[1].title)
+        +newArticles(`/aktivitete/${newActivities[2].slug}`, newActivities[2].imageCover, newActivities[2].createdAt.toLocaleString('en-GB', {year: 'numeric', month: 'numeric', day: 'numeric'}), newActivities[2].createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), newActivities[2].title)
+        +newArticles(`/aktivitete/${newActivities[3].slug}`, newActivities[3].imageCover, newActivities[3].createdAt.toLocaleString('en-GB', {year: 'numeric', month: 'numeric', day: 'numeric'}), newActivities[3].createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), newActivities[3].title)
+  .see-more-container
+    a.btn.see-more-btn.place-items-center(href='#')
+      | Shiko m&euml; shum&euml; 
+      i.ri-arrow-right-s-line

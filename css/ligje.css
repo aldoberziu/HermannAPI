@@ -1,0 +1,134 @@
+.titleheading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  color: var(--red-color);
+  background-color: white;
+  font-size: 3vh;
+}
+#partnerheading {
+  position: relative;
+  color: var(--red-color);
+  text-decoration: none;
+}
+#partnerheading::before {
+  content: '';
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transform: scaleX(1);
+  background-color: var(--red-color);
+  animation: openUnderline 2s ease;
+}
+@keyframes openUnderline {
+  from {
+    transform: scaleX(0);
+  }
+
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.pageHeading {
+  margin-top: 6.25rem;
+  color: var(--red-color);
+  text-align: center;
+  font-size: 2.5vw;
+}
+
+.heading-text {
+  text-align: center;
+  border-bottom: thin solid var(--red-color);
+  color: black;
+  color: var(--red-color);
+  font-size: 2vw;
+}
+
+.docs {
+  text-align: left;
+  margin: auto;
+  width: 90%;
+  border-radius: 10px;
+  background-color: white;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  position: absolute;
+  top: 10%;
+}
+
+.udhezime {
+  background-image: url('UDHËZIME.png');
+}
+
+.docList li {
+  color: #000;
+  font-size: 1.35vw;
+}
+
+.docList li a {
+  color: blue;
+  text-decoration: underline;
+}
+
+.urdhera {
+  background-image: url('URDHERA.png');
+}
+
+.ligje {
+  background-image: url('LIGJE.png');
+}
+
+.te-tjera {
+  background-image: url('TE\ TJERA.png');
+}
+
+@media screen and (max-width: 700px) {
+  .pageHeading {
+    font-size: 3vw;
+  }
+
+  .heading-text {
+    font-size: 2.5vw;
+  }
+
+  .docList li {
+    font-size: 1.85vw;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .pageHeading {
+    font-size: 3.55vw;
+    margin-top: 7rem;
+  }
+
+  .heading-text {
+    font-size: 3.3vw;
+  }
+
+  .docList li {
+    font-size: 2.7vw;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .pageHeading {
+    font-size: 4vw;
+    margin-top: 11rem;
+  }
+
+  .heading-text {
+    font-size: 3.75vw;
+  }
+
+  .docList li {
+    font-size: 3.1vw;
+  }
+}

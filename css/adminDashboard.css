@@ -1,0 +1,283 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins';
+}
+
+h1 {
+  font-size: 5vh;
+  margin-left: 10px;
+}
+
+.line {
+  width: 5px;
+  background-color: grey;
+}
+
+.tabs {
+  border: 2px solid#cccccc;
+  display: flex;
+  height: 100%;
+}
+
+.sidebarlinks {
+  width: 20%;
+  flex-shrink: 0;
+}
+
+.sidebarbtn {
+  display: block;
+  padding: 5%;
+  border: none;
+  width: 80%;
+  background: rgb(226, 22, 22);
+  outline: none;
+  cursor: pointer;
+  font-size: 3.5vh;
+  color: white;
+  margin: 2.5vh;
+}
+
+.sidebarbtn:active {
+  background-color: rgb(121, 17, 17);
+}
+
+.sidebarbtn--active {
+  font-weight: bold;
+  border-right: 1vh solid rgb(61, 11, 11);
+  background: grey;
+}
+
+.tabcontent {
+  padding: 15px;
+  font-size: 2.5vh;
+  display: none;
+  width: 67%;
+}
+
+.tabcontent--active {
+  display: block;
+}
+
+.tabcontent > :first-child {
+  margin-top: 0;
+}
+
+.focused {
+  background-color: rgb(112, 19, 19);
+}
+
+.unfocused {
+  background-color: red;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 5vw;
+  width: 100%;
+}
+
+.search form {
+  display: flex;
+}
+
+.searchTerm {
+  border: 3px solid #da1010;
+  border-right: none;
+  padding: 5px;
+  height: 21px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9dbfaf;
+}
+
+.searchTerm:focus {
+  color: #000000;
+}
+
+.searchButton {
+  padding: 10px;
+  border: 1px solid #da1010;
+  background: #da1010;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+
+.sidebar {
+  position: fixed;
+  overflow-y: scroll;
+  width: 75%;
+  height: 50vh;
+}
+
+.trending-news-box-holder {
+  width: 50%;
+  padding: 10px;
+  margin-bottom: 3%;
+  background-color: lightgrey;
+  border-radius: 3px;
+}
+.trending-news-img-box {
+  position: relative;
+  width: 100%;
+  height: var(--item-min-height-sm);
+}
+.article-data {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.ri-delete-bin-line {
+  color: red;
+  cursor: pointer;
+}
+.title {
+  text-decoration: none;
+  font-weight: bold;
+  color: blue;
+}
+.buttonoverlay {
+  font-family: 'Poppins';
+  border: none;
+  font-size: 2.5vh;
+  background-color: lightgrey;
+}
+#overlay {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.overlay-form {
+  width: 120vh;
+  height: 90vh;
+  background-color: white;
+  padding: 1% 2% 2% 2%;
+  overflow-y: scroll;
+}
+.form-title {
+  font-size: 4vh;
+  text-align: center;
+}
+.close {
+  position: absolute;
+  top: 20px;
+  right: 280px;
+  font-size: 6vh;
+  transform: rotate(45deg);
+  cursor: pointer;
+}
+#file-ip-1 {
+  display: none;
+}
+#main-content {
+  width: 100vh;
+  margin-left: 7%;
+  font-size: 3vh;
+  border: 2px solid grey;
+  border-radius: 5px;
+}
+.overlay-form label {
+  display: block;
+  width: 20%;
+  height: 45px;
+  line-height: 50px;
+  text-align: center;
+  background: #1172c2;
+  color: #fff;
+  font-size: 2.5vh;
+  font-family: 'Open Sans', sans-serif;
+  text-transform: Uppercase;
+  font-weight: 600;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-left: 48vh;
+}
+.form-input img {
+  width: 20%;
+  display: none;
+  margin-bottom: 30px;
+  overflow-y: scroll;
+}
+.title:hover {
+  color: rgb(86, 86, 192);
+}
+::-webkit-scrollbar {
+  width: 1rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3f4254;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2e303b;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 2.5rem;
+}
+.form__label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.form__input {
+  display: block;
+  font-family: inherit;
+  font-size: 1.5rem;
+  color: inherit;
+  padding: 1.25rem 1.75rem;
+  border: none;
+  width: 100%;
+  background-color: #fff;
+  background-color: #f2f2f2;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* Pseudo element (a visible thing that isn't really in the DOM).
+        Also needs -ms- */
+}
+.form__photo-upload {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.form__upload {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+/* #endregion Scrollbar */
+@media screen and (max-width: 768px) {
+}

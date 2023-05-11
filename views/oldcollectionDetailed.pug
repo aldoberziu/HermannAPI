@@ -1,0 +1,57 @@
+extends base
+mixin newArticles(link, image, date, day, title)
+  a.trending-news-box(href=link)
+    .trending-news-img-box
+      img.article-image(src=image alt='')
+    .trending-news-data
+      .article-data
+        span= date
+        span.article-data-spacer
+        span= day
+      h3.title.article-title= title
+
+block content
+    section.blog-post.section-header-offset
+        .blog-post-container.container
+            .blog-post-data
+                h3.title.blog-post-title= detailedDoc.title
+                -console.log(detailedDoc.title)
+                .article-data
+                    - const date = detailedDoc.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'})
+                    span= date
+                    span.article-data-spacer
+                    - const day = detailedDoc.createdAt.toLocaleString('en-us', {minute: 'numeric', hour: 'numeric'})
+                    span= day
+                img(src=`/${detailedDoc.imageCover}` alt='')
+            .container
+                p= `${detailedDoc.description}`
+                blockquote.quote
+                    p
+                        span
+                            i.ri-double-quotes-l
+                        |  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        span
+                            i.ri-double-quotes-r
+                p
+                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum 
+                .author.d-grid
+                    .author-image-box
+                        each image in detailedDoc.images
+                            img.article-image(src=`/${image}` alt='')
+                    .author-about
+                        h3.author-name Kleona Elezi
+                        p
+                            | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+                        ul.list.social-media
+                            li.list-item
+                                a.list-link(href='https://www.instagram.com/shkolla_hermann_gmeiner/')
+                                    i.ri-instagram-line
+                            li.list-item
+                                a.list-link(href='https://sq-al.facebook.com/hermanngmeinerTIK/')
+                                    i.ri-facebook-circle-line
+    section.featured-articles.section.section-header-offset
+        .featured-articles-container.container.d-grid
+            .sidebar.d-grid
+                h3.title.featured-content-title Më të rejat ↓
+                each newDoc in newDocs 
+                    +newArticles(`/${collectionTitle}/${newDoc.slug}`, newDoc.imageCover, newDoc.createdAt.toLocaleString('en-GB', {year: 'numeric', month: 'numeric', day: 'numeric'}), newDoc.createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), newDoc.title)

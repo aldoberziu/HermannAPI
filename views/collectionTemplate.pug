@@ -1,0 +1,43 @@
+extends base
+
+mixin article(link, image, date, day, title)
+  a.article.featured-article.featured-article-1(href=`${link}`)
+    img.article-image(src=`${image}` alt='')
+    .article-data-container
+      .article-data
+        span= date
+        span.article-data-spacer
+        span= day
+      h3.title.article-title= title
+mixin newArticles(link, image, date, day, title)
+  a.trending-news-box(href=link)
+    .trending-news-img-box
+      img.article-image(src=image alt='')
+    .trending-news-data
+      .article-data
+        span= date
+        span.article-data-spacer
+        span= day
+      h3.title.article-title= title
+mixin slide(image, date, title)
+  a.article.swiper-slide(href='#')
+    img.article-image(src=image alt='')
+    .article-data-container
+      .article-data
+        span= date
+        span.article-data-spacer
+        span 3 Min read
+      h3.title.article-title= title 
+
+block content
+  // Featured Articles
+  link(rel='stylesheet' href='notifTemplate.css')
+  section.featured-articles.section.section-header-offset
+    .featured-articles-container.container.d-grid
+        .featured-content.d-grid
+          each doc in docs
+            +article(`/${collectionTitle}/${doc.slug}`, doc.imageCover, doc.createdAt.toLocaleString('en-us', {year: 'numeric', month: 'numeric', day: 'numeric'}), doc.createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), doc.title)
+        .sidebar.d-grid
+          h3.title.featured-content-title Më të rejat ↓
+          each newDoc in newDocs
+            +newArticles(`/${collectionTitle}/${newDoc.slug}`, newDoc.imageCover, newDoc.createdAt.toLocaleString('en-GB', {year: 'numeric', month: 'numeric', day: 'numeric'}), newDoc.createdAt.toLocaleString('en-GB', {hour: 'numeric', minute: 'numeric'}), newDoc.title)
